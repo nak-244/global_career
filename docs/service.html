@@ -222,24 +222,24 @@
 			</div>
 			<div class="row my-lg-3">
 				<div class="col-lg-4 col-12 my-5">
-					<canvas id="chart1"></canvas>
+					<canvas id="chart1" height="250px"></canvas>
 				</div>
 				<div class="col-lg-4 col-12 my-5">
-					<canvas id="chart2"></canvas>
+					<canvas id="chart2" height="250px"></canvas>
 				</div>
 				<div class="col-lg-4 col-12 my-5">
-					<canvas id="chart3"></canvas>
+					<canvas id="chart3" height="250px"></canvas>
 				</div>
 			</div>
 			<div class="row my-lg-3">
 				<div class="col-lg-4 col-12 my-5">
-					<canvas id="chart4"></canvas>
+					<canvas id="chart4" height="250px"></canvas>
 				</div>
 				<div class="col-lg-4 col-12 my-5">
-					<canvas id="chart5"></canvas>
+					<canvas id="chart5" height="250px"></canvas>
 				</div>
 				<div class="col-lg-4 col-12 my-5">
-					<canvas id="chart6"></canvas>
+					<canvas id="chart6" height="250px"></canvas>
 				</div>
 			</div>
 		</div>
@@ -253,6 +253,12 @@
 					var ctx = chart.ctx;
 
 					chart.data.datasets.forEach(function(dataset, i) {
+
+						var dataSum = 0;
+						dataset.data.forEach(function(element) {
+							dataSum += element;
+						});
+
 						var meta = chart.getDatasetMeta(i);
 						if (!meta.hidden) {
 							meta.data.forEach(function(element, index) {
@@ -265,8 +271,13 @@
 								ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
 
 								// Just naively convert to string for now
+								// 標準
 								//var dataString = dataset.data[index].toString();
-								var dataString = chart.data.labels[index];
+								// ラベル表示
+								//var dataString = chart.data.labels[index];
+								// パーセント表示
+								var labelString = chart.data.labels[index];
+								var dataString = (Math.round(dataset.data[index] / dataSum * 1000) / 10).toString() + "%";
 
 								// Make sure alignment settings are correct
 								ctx.textAlign = 'center';
@@ -295,15 +306,12 @@
 					}]
 				},
 				options: {
-					legend: {
-						display: false
-					},
 					title: {
 						display: true,
 						fontSize: 15,
 						text: '新卒・中途区分'
 					},
-				}
+				},
 			});
 
 			//chart2
@@ -322,15 +330,12 @@
 					}]
 				},
 				options: {
-					legend: {
-						display: false
-					},
 					title: {
 						display: true,
 						fontSize: 15,
 						text: '学歴'
 					},
-				}
+				},
 			});
 
 			//chart3
@@ -351,15 +356,12 @@
 					}]
 				},
 				options: {
-					legend: {
-						display: false
-					},
 					title: {
 						display: true,
 						fontSize: 15,
 						text: '国籍／地域'
 					},
-				}
+				},
 			});
 
 			//chart4
@@ -378,15 +380,12 @@
 					}]
 				},
 				options: {
-					legend: {
-						display: false
-					},
 					title: {
 						display: true,
 						fontSize: 15,
 						text: '日本語レベル'
 					},
-				}
+				},
 			});
 
 			//chart5
@@ -401,19 +400,16 @@
 							"#F0B800",
 							"#F00038",
 						],
-						data: [22, 56, 12]
+						data: [32, 56, 12]
 					}]
 				},
 				options: {
-					legend: {
-						display: false
-					},
 					title: {
 						display: true,
 						fontSize: 15,
 						text: '英語レベル（TOEIC）'
 					},
-				}
+				},
 			});
 
 			//chart6
@@ -434,15 +430,12 @@
 					}]
 				},
 				options: {
-					legend: {
-						display: false
-					},
 					title: {
 						display: true,
 						fontSize: 15,
 						text: '希望年収'
 					},
-				}
+				},
 			});
 		</script>
 
