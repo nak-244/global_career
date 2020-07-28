@@ -663,9 +663,9 @@ html .btn-primary:disabled {
 
 html .btn-primary:active,
 html .btn-primary.active {
-	background-color: #29a667 !important;
+	background-color: #00AEF2 !important;
 	background-image: none !important;
-	border-color: #269c61 #269c61 #1c7347 !important;
+	border-color: #00AEF2 #00AEF2 #00AEF2 !important;
 }
 
 html .btn-primary-scale-2 {
@@ -1780,7 +1780,7 @@ html section.section-primary p {
 
 html section.section-primary-scale-2 {
 	background-color: #269c61 !important;
-	border-color: #218754 !important;
+	border-color: #00AEEF !important;
 }
 
 html section.section-primary-scale-2 .sort-source.sort-source-style-2 > li.active > a:after {
@@ -2412,8 +2412,8 @@ html .thumb-info .thumb-info-action-icon-light i {
 }
 
 .thumb-info-ribbon:before {
-	border-right-color: #218754;
-	border-left-color: #218754;
+	border-right-color: #00AEEF;
+	border-left-color: #00AEEF;
 }
 
 .thumb-info.thumb-info-block-primary .thumb-info-wrapper:before {
@@ -5607,8 +5607,8 @@ html .slide-overlay.slide-overlay-gradient .slotholder:after {
 }
 
 #footer .footer-ribbon:before {
-	border-right-color: #218754;
-	border-left-color: #218754;
+	border-right-color: #00AEEF;
+	border-left-color: #00AEEF;
 }
 
 #footer .footer-nav.footer-nav-bottom-line nav > ul:not(:hover) > li > a.active {
