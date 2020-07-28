@@ -106,7 +106,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 align-self-center p-static order-2 text-center">
-								<h1 class="text-dark text-dark text-10"><strong>問い合わせ・資料請求</strong></h1>
+								<h1 class="text-dark text-dark text-10"><strong>資料請求フォーム</strong></h1>
 								<span class="sub-title text-dark">お客さま情報をご入力ください</span>
 							</div>
 						</div>
@@ -115,9 +115,57 @@
 			</div>
 
 			<div class="container py-4">
-				<div class="row">
-
-				</div>
+				<form id="mailform" method="post" action="mailform/send.cgi" onsubmit="return sendmail(this);">
+					<div class="row justify-content-center">
+						<div class="col-lg-8 col-md-8">
+							<table class="table table-bordered tbl-r03">
+								<tbody>
+									<tr>
+										<th><span class="small badge badge-danger">必須</span>&nbsp;会社名</th>
+										<td>
+											<input type="text" name="会社名(必須)" class="form-control">
+										</td>
+									</tr>
+									<tr>
+										<th><span class="small badge badge-danger">必須</span>&nbsp;ご担当者名</th>
+										<td>
+											<input type="text" name="ご担当者名(必須)" class="form-control">
+										</td>
+									</tr>
+									<tr>
+										<th><span class="small badge badge-danger">必須</span>&nbsp;電話番号</th>
+										<td>
+											<input type="tel" name="電話番号(必須)" class="form-control">
+										</td>
+									</tr>
+									<tr>
+										<th><span class="small badge badge-danger">必須</span>&nbsp;メールアドレス</th>
+										<td>
+											<input type="email" name="email(必須)" class="form-control">
+										</td>
+									</tr>
+									<tr>
+										<th><span class="small badge badge-primary">任意</span>&nbsp;お問い合わせ内容</th>
+										<td>
+											<textarea name="お問い合わせ内容" class="form-control" rows="3"></textarea>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="small badge badge-primary">必須</span>&nbsp;個人情報の取り扱い</th>
+										<td>
+											<textarea name="お問い合わせ内容" class="form-control" rows="3"></textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="row text-center mt-5">
+						<div class="col-lg-12 col-md-12">
+							<input type="submit" value="フォームを送信する" class="btn btn-warning" />
+						</div>
+					</div>
+				</form>
 			</div>
 
 		</div>
