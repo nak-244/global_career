@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+## SYNCKGRAPHICA Mailform 6.8 / UPDATE::2014-05-02
 
 use Jcode;
 
@@ -8,7 +9,7 @@ use Jcode;
 ########################################################################
 
 #00.テスト時の誤送信を制御 / 0にしないとメールが飛びません
-$conf{'debug'} = 0;
+$conf{'debug'} = 1;
 
 #03.スパムブロック([URL]や[LINK]、<a>タグが含まれた送信をブロック) 1:ON / 0:OFF
 $conf{'spam_block'} = 1;
@@ -20,41 +21,39 @@ $conf{'spam_url_block'} = 1;
 $conf{'spam_message'} = 'スパム行為の可能性があるため、送信できません。<br />送信内容にURLを含める事はできません。';
 
 #04.sendmailのパス(サーバ会社へお問い合わせ下さい)
-# $conf{'sendmail'} = '/usr/sbin/sendmail';
-$conf{'sendmail'} = '/usr/lib/sendmail';
+$conf{'sendmail'} = '/usr/sbin/sendmail';
 
 #06.設置者のアドレス(カンマ区切り)
-$conf{'mailto'} = 'tsuyoshi.nakamura@openloop.co.jp';
+$conf{'mailto'} = '******';
 
 #07.送信完了時にリダイレクトするサンクスページ
-$conf{'thanks'} = '../thanks.html';
+$conf{'thanks'} = 'http://cgi.synck.com/mailform/thanks.html';
 
 #08.設置者に届くメールの件名
-$conf{'subject'} = '【GLC】ホームページからお問い合わせ';
+$conf{'subject'} = 'メールフォームから';
 
 #09.送信者に届くメールの件名
-$conf{'res_subject'} = '株式会社グローバルキャリア - 資料請求・お問い合わせ受け付けました。';
+$conf{'res_subject'} = 'お問い合わせありがとうございます';
 
 #10.送信者に届くメールの本文
 $conf{'res_body'} = <<'__res_body_eof__';
-この度は　株式会社グローバルキャリアにお問い合わせをいただき、誠にありがとうございます。
-内容を確認させていただき、改めて担当者よりご連絡をさせていただきます。
-
-尚、3営業日経過しても返信がなかった場合、お手数おかけいたしますが改めてお問い合わせフォームを送信いただきますよう、お願い申し上げます。
+この度はお問い合せ頂き誠にありがとうございました。
+改めて担当者よりご連絡をさせていただきます。
 
 ─ご送信内容の確認─────────────────
 <resbody>
 ──────────────────────────
 
-このメールに心当たりの無い場合は、お手数ですが下記連絡先までお問い合わせください。
+このメールに心当たりの無い場合は、お手数ですが
+下記連絡先までお問い合わせください。
 
 この度はお問い合わせ重ねてお礼申し上げます。
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-　株式会社グローバルキャリア　
-　〒160-0022
-　東京都新宿区新宿四丁目3番17号 FORECAST新宿SOUTH7階
-　TEL / 03-5909-3171
-　https://www.g-career.co.jp
+　※この署名はサンプルです。必ず変更してください※　
+　シンクグラフィカ / SYNCKGRAPHICA
+　〒003-0801 札幌市白石区菊水一条四丁目一番三十九号
+　TEL / 011-832-8698　FAX / 011-832-8698
+　http://www.synck.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 __res_body_eof__
 
@@ -85,11 +84,11 @@ $conf{'javascript'} = 0;
 $conf{'serial_file'} = 'count.dat';
 
 #12.件名に通し番号を付ける 1:ON / 0:OFF
-$conf{'subject_serial'} = 0;
+$conf{'subject_serial'} = 1;
 
 #12.送信履歴保存用ファイルとダウンロードパスワード
 #$conf{'log_file'} = 'sendlog.cgi';
-#$conf{'log_passwd'} = '3789';
+#$conf{'log_passwd'} = '0123';
 
 #13.送信文字コード
 $conf{'charset'} = 'ISO-2022-JP';
