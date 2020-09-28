@@ -33,7 +33,7 @@ $conf{'thanks'} = '../thanks.html';
 $conf{'subject'} = '【GLC】ホームページからお問い合わせ';
 
 #09.送信者に届くメールの件名
-$conf{'res_subject'} = '株式会社グローバルキャリア - お問い合わせ・お問い合わせ受け付けました。';
+$conf{'res_subject'} = '株式会社グローバルキャリア - お問い合わせを受け付けました。';
 
 #10.送信者に届くメールの本文
 $conf{'res_body'} = <<'__res_body_eof__';
