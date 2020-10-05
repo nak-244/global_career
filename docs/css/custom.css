@@ -106,8 +106,5 @@ td, th {
 
 /* フォームテキストサイズ */
 input[type="text"] {
-  box-sizing: border-box;
-  width: 100%;
-  font-size: 16px;
-  transform: scale(calc(12 / 16));
+	font-size:16px!important;
 }
