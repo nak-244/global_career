@@ -21,7 +21,7 @@
 
 /* ここから */
 /* テーブル調整 */
- table {
+table {
   margin: 20px auto;
 }
 
@@ -97,11 +97,16 @@ td, th {
 
 /* トップページsp版　ボタンの色 */
 .owl-carousel .owl-dots .owl-dot.active span, .owl-carousel .owl-dots .owl-dot:hover span {
-    background-color: #00AEEF;
+  background-color: #00AEEF;
 }
 
 .owl-theme .owl-nav.disabled+.owl-dots {
-    margin-top: 0px!important;
+  margin-top: 0px !important;
 }
 
-/* 個人情報チェック */
+/* フォームテキストサイズ */
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+}
