@@ -106,5 +106,18 @@ td, th {
 
 /* フォームテキストサイズ */
 input[type="text"] {
-	font-size:16px!important;
+  font-size: 16px !important;
+}
+
+/* SNSアイコン色変更 */
+.social-icons li a {
+  background: #FFFFFF;
+}
+
+/* SNSアイコンフッターhover変更 */
+.social-icons li:hover.social-icons-linkedin a {
+    background: #0073b2;
+}
+#footer a:not(.btn):hover {
+ background: #0073b2;
 }
