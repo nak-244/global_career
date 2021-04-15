@@ -8,3 +8,6 @@ RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 RewriteCond %{THE_REQUEST} ^.*/index.html
 RewriteRule ^(.*)index.html$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+Options +ExecCGI
+AddType application/x-httpd-cgi .cgi
